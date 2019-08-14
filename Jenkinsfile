@@ -6,5 +6,17 @@ pipeline {
                 sh 'dotnet build WebAPI.sln -p:Configuration=release -v:q'
             }
         }
+
+        stage('test') {
+            steps {
+                sh 'dotnet test XUnitTestProject1/XUnitTestProject1.csproj -p:Configiration=release -v:q'
+            }
+        }
+
+         stage('deploy') {
+            steps {
+                sh 'dotnet WebAPI/bin/Release/netcoreapp2.2/WebAPI.dll'
+            }
+        }
     }
 }
