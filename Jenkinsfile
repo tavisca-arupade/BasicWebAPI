@@ -7,7 +7,7 @@ pipeline {
             }
             steps {
                 sh 'echo deleted workspace'
-                sh 'rm -rf /var/lib/jenkins/workspace/aditi_BasicWebAPI/Pipeline'
+                sh 'deleteDir()'
             }
         }
 
