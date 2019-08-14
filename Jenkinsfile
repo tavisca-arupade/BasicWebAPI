@@ -5,6 +5,10 @@ pipeline {
             steps {
                 sh 'dotnet build WebAPI.sln -p:Configuration=release -v:q'
             }
+            steps {
+                sh 'echo deleted workspace'
+                sh 'rm -rf /var/lib/jenkins/workspace/aditi_BasicWebAPI/Pipeline'
+            }
         }
 
         stage('test') {
