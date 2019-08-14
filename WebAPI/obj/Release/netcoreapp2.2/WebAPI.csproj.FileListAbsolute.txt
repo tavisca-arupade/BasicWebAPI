@@ -1,0 +1,14 @@
+C:\Users\arupade\source\repos\WebAPI\WebAPI\bin\Release\netcoreapp2.2\WebAPI.deps.json
+C:\Users\arupade\source\repos\WebAPI\WebAPI\bin\Release\netcoreapp2.2\WebAPI.runtimeconfig.json
+C:\Users\arupade\source\repos\WebAPI\WebAPI\bin\Release\netcoreapp2.2\WebAPI.runtimeconfig.dev.json
+C:\Users\arupade\source\repos\WebAPI\WebAPI\bin\Release\netcoreapp2.2\WebAPI.dll
+C:\Users\arupade\source\repos\WebAPI\WebAPI\bin\Release\netcoreapp2.2\WebAPI.pdb
+C:\Users\arupade\source\repos\WebAPI\WebAPI\obj\Release\netcoreapp2.2\WebAPI.csprojAssemblyReference.cache
+C:\Users\arupade\source\repos\WebAPI\WebAPI\obj\Release\netcoreapp2.2\WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\arupade\source\repos\WebAPI\WebAPI\obj\Release\netcoreapp2.2\WebAPI.RazorAssemblyInfo.cache
+C:\Users\arupade\source\repos\WebAPI\WebAPI\obj\Release\netcoreapp2.2\WebAPI.RazorAssemblyInfo.cs
+C:\Users\arupade\source\repos\WebAPI\WebAPI\obj\Release\netcoreapp2.2\WebAPI.AssemblyInfoInputs.cache
+C:\Users\arupade\source\repos\WebAPI\WebAPI\obj\Release\netcoreapp2.2\WebAPI.AssemblyInfo.cs
+C:\Users\arupade\source\repos\WebAPI\WebAPI\obj\Release\netcoreapp2.2\WebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\arupade\source\repos\WebAPI\WebAPI\obj\Release\netcoreapp2.2\WebAPI.dll
+C:\Users\arupade\source\repos\WebAPI\WebAPI\obj\Release\netcoreapp2.2\WebAPI.pdb
