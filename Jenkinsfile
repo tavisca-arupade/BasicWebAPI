@@ -4,8 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'dotnet build WebAPI.sln -p:Configuration=release -v:q'
-            }
-            steps {
+            
                 sh 'echo deleted workspace'
                 sh 'deleteDir()'
             }
