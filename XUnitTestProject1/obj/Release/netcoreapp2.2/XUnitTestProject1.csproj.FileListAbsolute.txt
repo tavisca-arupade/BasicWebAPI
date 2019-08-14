@@ -12,3 +12,6 @@ C:\Users\arupade\source\repos\WebAPI\XUnitTestProject1\obj\Release\netcoreapp2.2
 C:\Users\arupade\source\repos\WebAPI\XUnitTestProject1\obj\Release\netcoreapp2.2\XUnitTestProject1.AssemblyInfo.cs
 C:\Users\arupade\source\repos\WebAPI\XUnitTestProject1\obj\Release\netcoreapp2.2\XUnitTestProject1.dll
 C:\Users\arupade\source\repos\WebAPI\XUnitTestProject1\obj\Release\netcoreapp2.2\XUnitTestProject1.pdb
+C:\Users\arupade\source\repos\WebAPI\XUnitTestProject1\bin\Release\netcoreapp2.2\WebAPI.dll
+C:\Users\arupade\source\repos\WebAPI\XUnitTestProject1\bin\Release\netcoreapp2.2\WebAPI.pdb
+C:\Users\arupade\source\repos\WebAPI\XUnitTestProject1\obj\Release\netcoreapp2.2\XUnitTestProject1.csproj.CopyComplete
