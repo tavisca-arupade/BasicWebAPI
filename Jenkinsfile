@@ -6,7 +6,6 @@ pipeline {
                 sh 'dotnet build WebAPI.sln -p:Configuration=release -v:q'
             
                 sh 'echo deleted workspace'
-                sh 'deleteDir()'
             }
         }
 
@@ -21,6 +20,11 @@ pipeline {
             steps {
                 sh 'dotnet WebAPI/bin/Release/netcoreapp2.2/WebAPI.dll'
             }
+        }
+    }
+    post { 
+        always { 
+            sh 'deleteDir()'
         }
     }
 }
