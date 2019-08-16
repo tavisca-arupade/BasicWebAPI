@@ -16,14 +16,16 @@ pipeline {
             }
         }
 
-         stage('deploy') {
+         stage('publish') {
             steps {
-                sh 'dotnet WebAPI/bin/Release/netcoreapp2.2/WebAPI.dll'
+                sh 'dotnet publish WebAPI.sln -p:Configuration=release -v:q -o Publish'
             }
         }
     }
     post { 
         always { 
+            sh'zip -r artifact.zip WebAPI/Publish/'
+            sh 'archiveArtifacts artifacts: artifact.zip'
             sh 'deleteDir()'
         }
     }
