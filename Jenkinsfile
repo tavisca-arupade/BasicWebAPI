@@ -1,5 +1,7 @@
 pipeline {
+    
     agent any
+    
     stages {
         stage('build') {
             steps {
@@ -26,7 +28,6 @@ pipeline {
         always { 
             sh 'zip -r artifact.zip WebAPI/Publish/'
             archiveArtifacts artifacts: 'artifact.zip'
-            
         }
     }
 }
