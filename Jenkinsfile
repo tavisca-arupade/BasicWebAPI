@@ -25,7 +25,7 @@ pipeline {
     post { 
         always { 
             sh'zip -r artifact.zip WebAPI/Publish/'
-            sh 'archiveArtifacts artifacts: artifact.zip'
+            archiveArtifacts artifacts: 'artifact.zip'
             sh 'deleteDir()'
         }
     }
