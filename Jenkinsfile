@@ -5,26 +5,26 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                powershell 'dotnet build BasicWebAPI/WebAPI.sln -p:Configuration=release -v:q'
+                powershell 'dotnet build WebAPI.sln -p:Configuration=release -v:q'
             }
         }
 
         stage('test') {
             steps {
-                powershell 'dotnet test BasicWebAPI/XUnitTestProject1/XUnitTestProject1.csproj -p:Configiration=release -v:q'
+                powershell 'dotnet test XUnitTestProject1/XUnitTestProject1.csproj -p:Configiration=release -v:q'
             }
         }
 
          stage('publish') {
             steps {
-                powershell 'dotnet publish BasicWebAPI/WebAPI.sln -p:Configuration=release -v:q'
+                powershell 'dotnet publish WebAPI.sln -p:Configuration=release -v:q'
             }
         }
         
         stage ('BuildDockerImage')
         {
             steps {
-                powershell 'docker build -t aspnetapp -f BasicWebAPI/Dockerfile .'
+                powershell 'docker build -t aspnetapp -f Dockerfile .'
             }
         }
         
@@ -69,6 +69,7 @@ pipeline {
         { 
             powershell 'docker stop webapicontainer'
             powershell 'docker rm webapicontainer'
+            cleanWs()
         }
     }
 }
