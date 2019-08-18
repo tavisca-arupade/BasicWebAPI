@@ -28,19 +28,17 @@ pipeline {
             }
         }
         
-        stage('Login to Docker')
-        {
-            steps{
-                powershell 'docker login -u aditirupade -p boots123'
-            }
-        }
-        
         stage('Tag and Push image to Docker')
         {
             steps{
-                    
-                    powershell 'docker tag aspnetapp:latest aditirupade/webapi:latest'
-                    powershell 'docker push aditirupade/webapi:latest'
+                  script{
+                    docker.withRegistry('','docker_hub_creds')
+                    {
+                        
+                        powershell 'docker tag aspnetapp:latest aditirupade/webapi:latest'
+                        powershell 'docker push aditirupade/webapi:latest'
+                    }
+                    }
             }
         }
         
