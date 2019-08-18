@@ -1,8 +1,6 @@
 pipeline {
     
-    agent {
-        docker {image 'node : aspnetapp'}
-    }
+    agent any
     
     stages {
         stage('build') {
