@@ -5,19 +5,19 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                powershell 'dotnet build WebAPI.sln -p:Configuration=release -v:q'
+                powershell 'dotnet build -p:Configuration=release -v:q'
             }
         }
 
         stage('test') {
             steps {
-                powershell 'dotnet test XUnitTestProject1/XUnitTestProject1.csproj -p:Configiration=release -v:q'
+                powershell 'dotnet test -p:Configiration=release -v:q'
             }
         }
 
          stage('publish') {
             steps {
-                powershell 'dotnet publish WebAPI.sln -p:Configuration=release -v:q'
+                powershell 'dotnet publish -p:Configuration=release -v:q'
             }
         }
         
