@@ -1,4 +1,4 @@
 FROM microsoft/dotnet:2.2-aspnetcore-runtime
 WORKDIR /app
-COPY  BasicWebAPI/Publish/* /app
+ADD  BasicWebAPI/WebAPI/bin/Release/netcoreapp2.2 /app
 ENTRYPOINT ["dotnet", "WebAPI.dll"]
