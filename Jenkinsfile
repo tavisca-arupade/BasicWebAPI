@@ -6,6 +6,7 @@ pipeline {
         string (name : 'SolutionName', defaultValue: 'WebAPI.sln',description: '')
         string (name : 'TestProjectName', defaultValue: 'XUnitTestProject1/XUnitTestProject1.csproj',description: '')
         string (name : 'LocalImage', defaultValue: 'aspnetapp',description: '')
+        def LocalImage = 'aspnetapp'
     }
     
     stages {
@@ -30,7 +31,7 @@ pipeline {
         stage ('BuildDockerImage')
         {
             steps {
-                powershell 'docker build -t aspnetapp -f Dockerfile .'
+                powershell 'docker build -t ${LocalImage} -f Dockerfile .'
             }
         }
         
