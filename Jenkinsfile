@@ -6,9 +6,6 @@ pipeline {
         string (name : 'SolutionName', defaultValue: 'WebAPI.sln',description: '')
         string (name : 'TestProjectName', defaultValue: 'XUnitTestProject1/XUnitTestProject1.csproj',description: '')
         string (name : 'LocalImage', defaultValue: 'aspnetapp',description: '')
-        string (name : 'RemoteImage', defaultValue: 'webapi',description: '')
-        string (name : 'RemoteRepo', defaultValue: 'aditirupade',description: '')
-        string (name : 'DockerContainer', defaultValue: 'webapicontainer',description: '')
     }
     
     stages {
@@ -33,7 +30,7 @@ pipeline {
         stage ('BuildDockerImage')
         {
             steps {
-                powershell 'docker build -t ${LocalImage} --build-arg APPLICATION=WebAPI .'
+                powershell 'docker build -t aspnetapp -f Dockerfile .'
             }
         }
         
@@ -44,8 +41,8 @@ pipeline {
                     docker.withRegistry('','docker_hub_creds')
                     {
                         
-                        powershell 'docker tag ${LocalImage}:latest ${RemoteRepo}/${RemoteImage}:latest'
-                        powershell 'docker push ${RemoteRepo}/${RemoteImage}:latest'
+                        powershell 'docker tag aspnetapp:latest aditirupade/webapi:latest'
+                        powershell 'docker push aditirupade/webapi:latest'
                     }
                     }
             }
@@ -54,19 +51,19 @@ pipeline {
         stage('Remove local docker image')
         {
             steps{
-                    powershell 'docker rmi ${LocalImage}'
+                    powershell 'docker rmi aspnetapp'
             }
         }
          stage('Pull docker image')
         {
             steps{
-                    powershell 'docker pull ${RemoteRepo}/${RemoteImage}:latest'
+                    powershell 'docker pull aditirupade/webapi:latest'
             }
         }
          stage('Run docker image')
         {
             steps{
-                    powershell 'docker run -p 8077:10000 --name ${DockerContainer} ${RemoteRepo}/${RemoteImage}'
+                    powershell 'docker run -p 8077:10000 --name webapicontainer aditirupade/webapi'
             }
         }
     }
@@ -74,8 +71,8 @@ pipeline {
     { 
         always
         { 
-            powershell 'docker stop ${DockerContainer}'
-            powershell 'docker rm ${DockerContainer}'
+            powershell 'docker stop webapicontainer'
+            powershell 'docker rm webapicontainer'
             cleanWs()
         }
     }
