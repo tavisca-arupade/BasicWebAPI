@@ -29,5 +29,13 @@ namespace XUnitTestProject1
 
             Assert.Equal("hello", greet.Get("hi").Value);
         }
+
+           [Fact]
+        public void Test_greet_value_when_anything()
+        {
+            GreetingController greet = new GreetingController();
+
+            Assert.Equal("something", greet.Get("hello").Value);
+        }
     }
 }
