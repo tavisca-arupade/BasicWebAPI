@@ -1,11 +1,15 @@
 pipeline {
     
     agent any
+
+    parameters {
+        string (name : 'SolutionName', defaultValue: 'WebAPI.sln',description: '')
+    }
     
     stages {
         stage('build') {
             steps {
-                powershell 'dotnet build -p:Configuration=release -v:q'
+                powershell 'dotnet build %SolutionName% -p:Configuration=release -v:q'
             }
         }
 
