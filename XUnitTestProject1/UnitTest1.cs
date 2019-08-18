@@ -35,7 +35,7 @@ namespace XUnitTestProject1
         {
             GreetingController greet = new GreetingController();
 
-            Assert.Equal("something", greet.Get("hello").Value);
+            Assert.Equal("hello", greet.Get("something").Value);
         }
     }
 }
