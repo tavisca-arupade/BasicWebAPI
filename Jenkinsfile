@@ -39,8 +39,8 @@ pipeline {
         {
             steps{
                     
-                    powershell 'docker tag aspnetapp:latest aditirupade/webapi:latest'
-                    powershell 'docker push aditirupade/webapi:latest'
+                    powershell 'docker tag aspnetapp:latest webapi:latest'
+                    powershell 'docker push webapi:latest'
             }
         }
         
@@ -53,13 +53,13 @@ pipeline {
          stage('Pull docker image')
         {
             steps{
-                    powershell 'docker pull aditirupade/webapi:latest'
+                    powershell 'docker pull webapi:latest'
             }
         }
          stage('Run docker image')
         {
             steps{
-                    powershell 'docker run -p 8077:10000 --name webapicontainer aditirupade/webapi'
+                    powershell 'docker run -p 8077:10000 --name webapicontainer webapi'
             }
         }
     }
