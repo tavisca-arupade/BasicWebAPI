@@ -23,7 +23,7 @@ pipeline {
 
         stage('sonarqube analysis'){
             steps {
-                powershell 'dotnet ${SONARQUBE_PATH} begin /k:"demo" /d:sonar.host.url="${SONARQUBE_URL}" /d:sonar.login="${SONARQUBE_TOKEN}"'
+                powershell '''dotnet ${SONARQUBE_PATH} begin /k:"demo" /d:sonar.host.url="${SONARQUBE_URL}" /d:sonar.login="${SONARQUBE_TOKEN}"'''
                 powershell 'dotnet build'
                 powershell 'dotnet ${SONARQUBE_PATH} end /d:sonar.login="${SONARQUBE_TOKEN}"'
             }
