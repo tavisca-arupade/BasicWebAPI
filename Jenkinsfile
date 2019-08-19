@@ -30,7 +30,7 @@ pipeline {
         stage ('BuildDockerImage')
         {
             steps {
-                powershell 'docker build -t aspnetapp -f Dockerfile .'
+                powershell 'docker build -t ${LocalImage} -f Dockerfile .'
             }
         }
         
@@ -44,7 +44,7 @@ pipeline {
                         powershell 'docker tag aspnetapp:latest aditirupade/webapi:latest'
                         powershell 'docker push aditirupade/webapi:latest'
                     }
-                    }
+                }
             }
         }
         
