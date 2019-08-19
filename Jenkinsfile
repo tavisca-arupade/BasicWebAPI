@@ -23,9 +23,9 @@ pipeline {
 
         stage('sonarqube analysis'){
             steps {
-                powershell 'dotnet C:/MSBuild/SonarScanner.MSBuild.dll begin /k:"demo" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="89704bb981d3d78d32bc509e119ccc9e40679f00"'
+                powershell 'dotnet ${SONARQUBE_PATH} begin /k:"demo" /d:sonar.host.url="${SONARQUBE_URL}" /d:sonar.login="${SONARQUBE_TOKEN}"'
                 powershell 'dotnet build'
-                powershell 'dotnet C:/MSBuild/SonarScanner.MSBuild.dll end /d:sonar.login="89704bb981d3d78d32bc509e119ccc9e40679f00"'
+                powershell 'dotnet ${SONARQUBE_PATH} end /d:sonar.login="${SONARQUBE_TOKEN}"'
             }
         }
 
