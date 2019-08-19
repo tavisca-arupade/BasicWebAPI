@@ -25,7 +25,7 @@ pipeline {
             steps {
                 powershell 'dotnet C:/MSBuild/SonarScanner.MSBuild.dll begin /k:"demo" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="89704bb981d3d78d32bc509e119ccc9e40679f00"'
                 powershell 'dotnet build'
-                powershell 'dotnet C:\MSBuild\SonarScanner.MSBuild.dll end /d:sonar.login="89704bb981d3d78d32bc509e119ccc9e40679f00"'
+                powershell 'dotnet C:/MSBuild/SonarScanner.MSBuild.dll end /d:sonar.login="89704bb981d3d78d32bc509e119ccc9e40679f00"'
             }
         }
 
