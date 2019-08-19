@@ -52,7 +52,7 @@ pipeline {
                     docker.withRegistry('','docker_hub_creds')
                     {
                         
-                        powershell 'docker tag ${env:LocalImage}:latest ${env:Username}/${env:RemoteImage}:latest'
+                        powershell 'docker tag ${param:LocalImage}:latest ${param:Username}/${param:RemoteImage}:latest'
                         powershell 'docker push ${env:Username}/${env:RemoteImage}:latest'
                     }
                 }
