@@ -30,7 +30,7 @@ pipeline {
         stage ('BuildDockerImage')
         {
             steps {
-                powershell 'docker build -t ${LocalImage} -f Dockerfile .'
+                powershell 'docker build -t params.LocalImage -f Dockerfile .'
             }
         }
         
